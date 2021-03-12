@@ -10,12 +10,13 @@ def find_maximum_sub_array(a):
     end = 0
     l_sum = -1
     output = []
+    max_index_position = len(a)-1
 
     for i in range(len(a)):
-        if a[i] < 0 or i == len(a) - 1:
+        if a[i] < 0 or i == max_index_position:
             if start == 1 and a[0] >= 0:
                 start = 0
-            if i == len(a)-1 and a[-1] >= 0:
+            if i == max_index_position and a[-1] >= 0:
                 end = end + 2
             if sum(a[start:end]) > l_sum:
                 l_sum = sum(a[start:end])
